@@ -1,0 +1,13 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: idyie-formatter-api
+    ports:
+      - "9091:9091"
+    environment:
+      FLASK_ENV: development
+    volumes:
+      - .:/app
+    command: python run.py
