@@ -1,6 +1,5 @@
 from flask import Blueprint, jsonify
 
-# Création du blueprint pour les routes de ping
 ping_bp = Blueprint('ping', __name__)
 
 

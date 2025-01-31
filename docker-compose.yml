@@ -1,13 +1,16 @@
 services:
-  api:
+  application:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: idyie-formatter-api
+    container_name: idyie-formatter-application
     ports:
       - "$PORT:$PORT"
     environment:
-      FLASK_ENV: development
+      FLASK_ENV: $FLASK_ENV
+      IDYIE_API_URL: $IDYIE_API_URL
+    networks:
+      - idyie-network
     volumes:
       - .:/app
     command: python run.py
